@@ -25,11 +25,11 @@ public class CadastrarCidade implements Opcao {
     do {
       System.out.print("Nome da cidade: ");
       nomeCidade = input.nextLine();
-      jaCadastrada = grafoHelper.BuscarCidade(nomeCidade) == null;
       if (nomeCidade.isEmpty()) {
         System.out.println("Saindo sem cadastrar cidade.");
         return;
       }
+      jaCadastrada = grafoHelper.BuscarCidade(nomeCidade) != null;
       if (jaCadastrada) {
         System.out.println("Ops... cidade já cadastrada!");
       }
